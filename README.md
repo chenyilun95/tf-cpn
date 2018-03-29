@@ -5,20 +5,22 @@ This is a Tensorflow re-implementation of CPN(Cascaded Pyramid Network), which w
 ## Results on COCO minival dataset (Single Model)
 Note that our testing code is based on some detectors. In COCO minival dataset, the used detector here achieves an AP of 41.1 whose human AP is 55.3 in COCO minival dataset.
 <center>
+
 | Method | Base Model | Input Size | AP @0.5:0.95 | AP @0.5 | AP @0.75 | AP medium | AP large |
-|:-------|:--------:||:-----:|:-------:|:-------:|:-------:|:-------:|
+|:-------|:--------:||:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | CPN | ResNet-50 | 256x192 | 69.7 | 88.3 | 77.0 | 66.2 | 76.1 |
 | CPN | ResNet-50 | 384x288 | 72.3 | 89.1 | 78.8 | 68.4 | 79.1 |
 | CPN | ResNet-101 | 384x288 | 72.9 | 89.2 | 79.4 | 69.1 | 79.9 | 
 </center>
 
-<center>
 ## Results on COCO test-dev dataset (Single Model)
 Here we use the detector that achieves an AP of 44.5 whose human AP is 57.2 in COCO test-dev dataset.
+
+<center>
 | Method | AP @0.5:0.95 | AP @0.5 | AP @0.75 | AP medium | AP large |
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| CPN(ResNet-101, 384x288) | 72.0 | 91.8 | 80.8 | 69.1 | 78.7 |
+|:-------|:-------:|:-------:|:-------:|:-------:|:-------:|
 | Detectron(Mask R-CNN) | 67.0 | 88.0 | 73.1 | 62.2 | 75.6 |
+| **CPN(ResNet-101, 384x288)** | **72.0** | **91.8** | **80.8** | **69.1** | **78.7** |
 </center>
 
 ## Usage
