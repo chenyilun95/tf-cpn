@@ -7,10 +7,11 @@ Note that our testing code is based on some detectors. In COCO minival dataset, 
 <center>
 
 | Method | Base Model | Input Size | AP @0.5:0.95 | AP @0.5 | AP @0.75 | AP medium | AP large |
-|:-------|:--------:||:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|:-------|:--------:|:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | CPN | ResNet-50 | 256x192 | 69.7 | 88.3 | 77.0 | 66.2 | 76.1 |
 | CPN | ResNet-50 | 384x288 | 72.3 | 89.1 | 78.8 | 68.4 | 79.1 |
 | CPN | ResNet-101 | 384x288 | 72.9 | 89.2 | 79.4 | 69.1 | 79.9 | 
+
 </center>
 
 ## Results on COCO test-dev dataset (Single Model)
