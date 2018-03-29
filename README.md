@@ -18,29 +18,31 @@ Note that our testing code is based on some detectors. In COCO minival dataset, 
 Here we use the detector that achieves an AP of 44.5 whose human AP is 57.2 in COCO test-dev dataset.
 
 <center>
+
 | Method | AP @0.5:0.95 | AP @0.5 | AP @0.75 | AP medium | AP large |
 |:-------|:-------:|:-------:|:-------:|:-------:|:-------:|
 | Detectron(Mask R-CNN) | 67.0 | 88.0 | 73.1 | 62.2 | 75.6 |
 | **CPN(ResNet-101, 384x288)** | **72.0** | **91.8** | **80.8** | **69.1** | **78.7** |
+
 </center>
 
 ## Usage
 
 ### Train on MSCOCO dataset
 1. Clone the repository
-'''
+```
 git clone https://github.com/chenyilun95/tf-cpn.git
-'''
+```
 We'll call the directory that you cloned $CPN_ROOT.
 2. Download MSCOCO data from [http://cocodataset.org/#download](http://cocodataset.org/#download) and put the data in $CPN_ROOT/data/COCO/MSCOCO.
 3. Download the base model (ResNet) weights from [slim model_zoo](https://github.com/tensorflow/models/tree/master/research/slim) and put them in $CPN_ROOT/data/imagenet_weights/. 
 4. Link the output folder to $CPN_ROOT/logs/.
 5. To train a CPN model, use network.py in the model folder.
-'''
+```
 python3 network.py -d 0-1
-'''
+```
 After the training finished, output is written underneath $CPN_ROOT/log/ which looks like below
-'''
+```
 log/
        |->model_dump/
        |    |->snapshot_1.ckpt.data-00000-of-00001
@@ -48,17 +50,17 @@ log/
        |    |->snapshot_1.ckpt.meta
        |    |->...
        |->train_logs.txt
-'''
+```
 
 ### Validation
 Run the testing code in the model folder. 
-'''
+```
 python3 mptest.py -d 0-1 -r 350
-'''
+```
 This assumes there is an models that has been trained for 350 epochs. If you just want to specify a pre-trained model path, it's fine to run
-'''
+```
 python3 mptest.py -d 0-1 -r log/model_dump/snapshot_350.ckpt
-'''
+```
 
 Here we provide the human detection boxes results:
 [Person detection results in COCO Minival](https://drive.google.com/drive/folders/1BllF9--dN9uV3FRROcmuIbwNCcn7cCP0?usp=sharing)
