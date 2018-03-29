@@ -34,9 +34,13 @@ Here we use the detector that achieves an AP of 44.5 whose human AP is 57.2 in C
 git clone https://github.com/chenyilun95/tf-cpn.git
 ```
 We'll call the directory that you cloned $CPN_ROOT.
+
 2. Download MSCOCO data from [http://cocodataset.org/#download](http://cocodataset.org/#download) and put the data in $CPN_ROOT/data/COCO/MSCOCO.
+
 3. Download the base model (ResNet) weights from [slim model_zoo](https://github.com/tensorflow/models/tree/master/research/slim) and put them in $CPN_ROOT/data/imagenet_weights/. 
+
 4. Link the output folder to $CPN_ROOT/logs/.
+
 5. To train a CPN model, use network.py in the model folder.
 ```
 python3 network.py -d 0-1
