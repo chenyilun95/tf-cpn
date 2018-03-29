@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+### copy from https://github.com/ppwwyyxx/tensorpack
 
 import sys
 import msgpack
