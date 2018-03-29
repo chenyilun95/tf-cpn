@@ -63,12 +63,17 @@ python3 mptest.py -d 0-1 -r log/model_dump/snapshot_350.ckpt
 ```
 
 Here we provide the human detection boxes results:
+
 [Person detection results in COCO Minival](https://drive.google.com/drive/folders/1BllF9--dN9uV3FRROcmuIbwNCcn7cCP0?usp=sharing)
+
 [Person detection results in COCO test-dev](https://drive.google.com/open?id=1RNnWuLjLuqzemYzOjuoihQvLrBdwiVnu)
 
 Pre-trained models:
+
 [COCO.res50.256x192.CPN](https://drive.google.com/drive/folders/16hoq9KBVtR_zpJ1xUKweB-tbjFrao4sL?usp=sharing)
+
 [COCO.res50.384x288.CPN](https://drive.google.com/drive/folders/1wP2agjJkDaBLl_1UcTmlmyl2Vw3CKlJa?usp=sharing)
+
 [COCO.res101.384x288.CPN](https://drive.google.com/drive/folders/1X0kcPG1KSn3aeWm9fvqVMziGK3XIvJv9?usp=sharing)
 
 ## Citing CPN
