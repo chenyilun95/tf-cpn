@@ -78,11 +78,12 @@ Pre-trained models:
 
 ## Citing CPN
 If you find CPN useful in your research, please consider citing:
-       @article{Chen2017Arxiv,
-       	author = {Chen, Yilun and Wang, Zhicheng and Peng, Yuxiang and Zhang, Zhiqiang and Yu, Gang and Sun, Jian},
-       	title = {{Cascaded Pyramid Network for Multi-Person Pose Estimation}},
-       	url = {http://arxiv.org/abs/1711.07319},
-       	year = {2017}
-       }
+
+    @article{Chen2017Arxiv,
+    	author = {Chen, Yilun and Wang, Zhicheng and Peng, Yuxiang and Zhang, Zhiqiang and Yu, Gang and Sun, Jian},
+    	title = {{Cascaded Pyramid Network for Multi-Person Pose Estimation}},
+    	url = {http://arxiv.org/abs/1711.07319},
+    	year = {2017}
+    }
 
 ## Contact
