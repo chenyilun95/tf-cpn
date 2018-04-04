@@ -8,7 +8,7 @@ class Config:
 
     cur_dir = os.path.dirname(os.path.abspath(__file__))
     this_dir_name = cur_dir.split('/')[-1]
-    root_dir = os.path.join(cur_dir, '..', '..', '..')
+    root_dir = os.path.join(cur_dir, '..', '..')
 
     proj_name = this_dir_name
 
