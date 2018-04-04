@@ -100,17 +100,12 @@ class Network(ModelDesc):
         if not cfg.dpflow_enable:
             return dataiter(train_data)
         else:
-            from tfflat.dpflow import provider, receiver
-            def mpfunc(id):
-                np.random.seed(id)
-                np.random.shuffle(train_data)
-                return dataiter(train_data)
-            provider(cfg.nr_dpflows, cfg.proj_name, mpfunc)
-            def mpdataiter():
-                dataiter = receiver(cfg.proj_name)
-                for data in dataiter:
-                    yield data
-            return mpdataiter()
+            from tfflat.data_provider import DataFromList, MultiProcessMapDataZMQ, BatchData
+            dp = MultiProcessMapDataZMQ( DataFromList(train_data), 10, Preprocessing )
+            dp = BatchData(dp, cfg.batch_size // cfg.nr_aug)
+            dp.reset_state()
+            dataiter = dp.get_data()
+            return dataiter
 
     def make_network(self, is_train):
         if is_train:
