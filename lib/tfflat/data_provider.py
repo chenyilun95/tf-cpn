@@ -192,10 +192,10 @@ class MultiProcessMapDataZMQ(_ParallelMapData):
             self.map_func = map_func
             self.pipename = pipename
             self.hwm = hwm
-            setproctitle('data provider {}-{}'.format(self.pipename, self.identity))
 
         def run(self):
             print('Start data provider {}-{}'.format(self.pipename, self.identity))
+            setproctitle('data provider {}-{}'.format(self.pipename, self.identity))
             ctx = zmq.Context()
             socket = ctx.socket(zmq.DEALER)
             socket.setsockopt(zmq.IDENTITY, self.identity)
