@@ -142,7 +142,7 @@ class Base(object):
         self.summary_dict.update( get_tower_summary_dict(self.net._tower_summary) )
 
     def load_weights(self, model=None):
-        if model is None or model == 'last_epoch':
+        if model == 'last_epoch':
             sfiles = os.path.join(self.cfg.model_dump_dir, 'snapshot_*.ckpt.meta')
             sfiles = glob.glob(sfiles)
             if len(sfiles) > 0:
