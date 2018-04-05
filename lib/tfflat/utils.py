@@ -4,6 +4,7 @@
 import os
 import sys
 import numpy as np
+from datetime import datetime
 
 def mem_info():
     import subprocess

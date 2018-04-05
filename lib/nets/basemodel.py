@@ -6,11 +6,12 @@ from tensorflow.python.framework import ops
 from tensorflow.python.ops import nn_ops
 from tensorflow.contrib.layers.python.layers import regularizers, \
     initializers, layers
+from config import cfg
 
 def resnet_arg_scope(bn_is_training,
                      bn_trainable,
                      trainable=True,
-                     weight_decay=1e-4,
+                     weight_decay=cfg.weight_decay,
                      batch_norm_decay=0.99,
                      batch_norm_epsilon=1e-9,
                      batch_norm_scale=True):

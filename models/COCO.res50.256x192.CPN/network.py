@@ -80,32 +80,17 @@ class Network(ModelDesc):
         d = COCOJoints()
         train_data, _ = d.load_data(cfg.min_kps)
 
-        def dataiter(train_data):
-            ind = 0
-            while True:
-                batch_data = []
-                for i in range(cfg.batch_size // cfg.nr_aug):
-                    ind += 1
-                    if ind > len(train_data): ind %= len(train_data)
-                    data = Preprocessing(train_data[i])
-                    batch_data.append(data)
-                ret = []
-
-                # aggregate
-                for i in range(len(batch_data[0])):
-                    ret.append(np.asarray(
-                        [batch_data[j][i] for j in range(len(batch_data))]))
-                yield ret
-
-        if not cfg.dpflow_enable:
-            return dataiter(train_data)
+        from tfflat.data_provider import DataFromList, MultiProcessMapDataZMQ, BatchData, MapData
+        dp = DataFromList(train_data)
+        if cfg.dpflow_enable:
+            dp = MultiProcessMapDataZMQ(dp, cfg.nr_dpflows, Preprocessing)
         else:
-            from tfflat.data_provider import DataFromList, MultiProcessMapDataZMQ, BatchData
-            dp = MultiProcessMapDataZMQ( DataFromList(train_data), 10, Preprocessing )
-            dp = BatchData(dp, cfg.batch_size // cfg.nr_aug)
-            dp.reset_state()
-            dataiter = dp.get_data()
-            return dataiter
+            dp = MapData(dp, Preprocessing)
+        dp = BatchData(dp, cfg.batch_size // cfg.nr_aug)
+        dp.reset_state()
+        dataiter = dp.get_data()
+
+        return dataiter
 
     def make_network(self, is_train):
         if is_train:

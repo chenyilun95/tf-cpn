@@ -1,3 +1,4 @@
+# copy from tensorpack: https://github.com/ppwwyyxx/tensorpack
 import numpy as np
 import threading
 import multiprocessing as mp
@@ -10,6 +11,7 @@ import os
 import zmq
 import atexit
 from itertools import cycle
+from copy import copy
 from .utils import get_rng
 
 def del_weakref(x):
@@ -137,6 +139,35 @@ class _ParallelMapData(object):
             if k == self._buffer_size - 1:
                 self._fill_buffer()
             yield dp
+
+class MapData(object):
+    """
+    Apply a mapper/filter on the DataFlow.
+
+    Note:
+        1. Please make sure func doesn't modify the components
+           unless you're certain it's safe.
+        2. If you discard some datapoints, ``ds.size()`` will be incorrect.
+    """
+
+    def __init__(self, ds, func):
+        """
+        Args:
+            ds (DataFlow): input DataFlow
+            func (datapoint -> datapoint | None): takes a datapoint and returns a new
+                datapoint. Return None to discard this datapoint.
+        """
+        self.ds = ds
+        self.func = func
+
+    def get_data(self):
+        for dp in self.ds.get_data():
+            ret = self.func(copy(dp))  # shallow copy the list
+            if ret is not None:
+                yield ret
+
+    def reset_state(self):
+        pass
 
 class MultiProcessMapDataZMQ(_ParallelMapData):
     """
@@ -284,7 +315,7 @@ class BatchData(object):
             use_list (bool): if True, each component will contain a list
                 of datapoints instead of an numpy array of an extra dimension.
         """
-        super(BatchData, self).__init__(ds)
+        self.ds = ds
         self.batch_size = int(batch_size)
         self.use_list = use_list
 
@@ -333,4 +364,7 @@ class BatchData(object):
                     except ImportError:
                         pass
         return result
+
+    def reset_state(self):
+        self.ds.reset_state()
 

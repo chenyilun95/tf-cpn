@@ -124,7 +124,7 @@ def data_augmentation(trainData, trainLabel, trainValids, segms=None):
                 trainSegms[counter] = newsegm
             trainLabel[counter] = np.array(allc)
             trainValids[counter] = np.array(allc_valid)
-
+            counter += 1
     if trainSegms is not None:
         return trainData, trainLabel, trainSegms
     else:
@@ -247,7 +247,7 @@ def Preprocessing(d, stage='train'):
 
     img = img - cfg.pixel_means
     if cfg.pixel_norm:
-        img = img / 255.
+        img = img / 255. * 2.
     img = img.transpose(2, 0, 1)
     imgs.append(img)
     if 'joints' in d:

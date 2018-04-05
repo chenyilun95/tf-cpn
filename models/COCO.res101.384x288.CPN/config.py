@@ -67,7 +67,7 @@ class Config:
     nr_aug = 4
 
     pixel_means = np.array([[[102.9801, 115.9465, 122.7717]]]) # BGR
-    pixel_norm = True
+    pixel_norm = False
     data_shape = (384, 288) #height, width
     output_shape = (96, 72) #height, width
     gaussain_kernel = (13, 13)
