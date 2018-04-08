@@ -64,14 +64,14 @@ class ModelDesc(object):
                     print('Summary tensor {} got an unknown shape.'.format(name))
                 else:
                     assert v.get_shape().as_list() == [], \
-                        "Summary tensor only supports scalar but got {}".format(v.get_shape.as_list())
+                        "Summary tensor only supports scalar but got {}".format(v.get_shape().as_list())
                 tf.add_to_collection(name, v)
         else:
             if vars.get_shape() == None:
                 print('Summary tensor {} got an unknown shape.'.format(name))
             else:
                 assert vars.get_shape().as_list() == [], \
-                    "Summary tensor only supports scalar but got {}".format(vars.get_shape.as_list())
+                    "Summary tensor only supports scalar but got {}".format(vars.get_shape().as_list())
             tf.add_to_collection(name, vars)
         self._tower_summary.append([name, reduced_method])
 
