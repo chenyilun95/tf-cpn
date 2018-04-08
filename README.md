@@ -1,6 +1,6 @@
 # Cascaded Pyramid Network (CPN)
 
-This is a Tensorflow re-implementation of CPN(Cascaded Pyramid Network), which wins 2017 COCO Keypoints Challenge. The original repo is based the inner deep learning framework (MegBrain) in Megvii Inc.
+This is a Tensorflow re-implementation of CPN([Cascaded Pyramid Network](https://arxiv.org/abs/1711.07319)), which wins 2017 COCO Keypoints Challenge. The original repo is based on the inner deep learning framework (MegBrain) in Megvii Inc.
 
 ## Results on COCO minival dataset (Single Model)
 Note that our testing code is based on some detectors. In COCO minival dataset, the used detector here achieves an AP of 41.1 whose human AP is 55.3 in COCO minival dataset.
