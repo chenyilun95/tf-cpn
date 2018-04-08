@@ -14,6 +14,9 @@ def average_gradients(tower_grads):
     """
     average_grads = []
     for grad_and_vars in zip(*tower_grads):
+        if grad_and_vars[0][0] is None:
+            print('No gradient on var {}'.format(grad_and_vars[0][1].name))
+            continue
         # Note that each grad_and_vars looks like the following:
         #   ((grad0_gpu0, var0_gpu0), ... , (grad0_gpuN, var0_gpuN))
         grads = []
@@ -49,15 +52,19 @@ def sum_gradients(tower_grads):
     """
     sum_grads = []
     for grad_and_vars in zip(*tower_grads):
+        if grad_and_vars[0][0] is None:
+            print('No gradient on var {}'.format(grad_and_vars[0][1].name))
+            continue
         # Note that each grad_and_vars looks like the following:
         #   ((grad0_gpu0, var0_gpu0), ... , (grad0_gpuN, var0_gpuN))
         grads = []
         for g, _ in grad_and_vars:
             # Add 0 dimension to the gradients to represent the tower.
-            expanded_g = tf.expand_dims(g, 0)
+            if g is not None:
+                expanded_g = tf.expand_dims(g, 0)
 
-            # Append on a 'tower' dimension which we will average over below.
-            grads.append(expanded_g)
+                # Append on a 'tower' dimension which we will average over below.
+                grads.append(expanded_g)
 
         # Average over the 'tower' dimension.
         grad = tf.concat(axis=0, values=grads)
