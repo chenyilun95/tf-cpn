@@ -13,6 +13,7 @@ import atexit
 from itertools import cycle
 from copy import copy
 from .utils import get_rng
+from setproctitle import setproctitle
 
 def del_weakref(x):
     o = x()
@@ -194,6 +195,7 @@ class MultiProcessMapDataZMQ(_ParallelMapData):
 
         def run(self):
             print('Start data provider {}-{}'.format(self.pipename, self.identity))
+            setproctitle('data provider {}-{}'.format(self.pipename, self.identity))
             ctx = zmq.Context()
             socket = ctx.socket(zmq.DEALER)
             socket.setsockopt(zmq.IDENTITY, self.identity)
