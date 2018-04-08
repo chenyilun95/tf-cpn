@@ -1,6 +1,6 @@
 # Cascaded Pyramid Network (CPN)
 
-This is a Tensorflow re-implementation of CPN([Cascaded Pyramid Network](https://arxiv.org/abs/1711.07319)), which wins 2017 COCO Keypoints Challenge. The original repo is based on the inner deep learning framework (MegBrain) in Megvii Inc.
+This is a Tensorflow re-implementation of CPN ([Cascaded Pyramid Network](https://arxiv.org/abs/1711.07319)), which wins 2017 COCO Keypoints Challenge. The original repo is based on the inner deep learning framework (MegBrain) in Megvii Inc.
 
 ## Results on COCO minival dataset (Single Model)
 Note that our testing code is based on some detectors. In COCO minival dataset, the used detector here achieves an AP of 41.1 whose human AP is 55.3 in COCO minival dataset.
@@ -81,13 +81,13 @@ Pre-trained models:
 [COCO.res101.384x288.CPN](https://drive.google.com/drive/folders/1X0kcPG1KSn3aeWm9fvqVMziGK3XIvJv9?usp=sharing)
 
 ## Citing CPN
-If you find CPN useful in your research, please consider citing:
+If you find [CPN](https://arxiv.org/abs/1711.07319) useful in your research, please consider citing:
 
-    @article{ChenCVPR2018,
+    @article{Chen2018CPN,
     	author = {Chen, Yilun and Wang, Zhicheng and Peng, Yuxiang and Zhang, Zhiqiang and Yu, Gang and Sun, Jian},
     	title = {{Cascaded Pyramid Network for Multi-Person Pose Estimation}},
-    	url = {http://arxiv.org/abs/1711.07319},
-    	year = {2017}
+      Conference = {CVPR}
+    	year = {2018}
     }
 
 ## Contact
