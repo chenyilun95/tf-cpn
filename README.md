@@ -1,4 +1,4 @@
-## Cascaded Pyramid Network (CPN)
+# Cascaded Pyramid Network (CPN)
 
 This is a Tensorflow re-implementation of CPN(Cascaded Pyramid Network), which wins 2017 COCO Keypoints Challenge. The original repo is based the inner deep learning framework (MegBrain) in Megvii Inc.
 
@@ -91,4 +91,4 @@ If you find CPN useful in your research, please consider citing:
     }
 
 ## Contact
-if you have any questions about this repo, please feel free to contact chenyilun95@gmail.com.
+If you have any questions about this repo, please feel free to contact chenyilun95@gmail.com.
