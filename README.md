@@ -84,10 +84,10 @@ Pre-trained models:
 If you find [CPN](https://arxiv.org/abs/1711.07319) useful in your research, please consider citing:
 
     @article{Chen2018CPN,
-    	Author = {Chen, Yilun and Wang, Zhicheng and Peng, Yuxiang and Zhang, Zhiqiang and Yu, Gang and Sun, Jian},
-    	Title = {{Cascaded Pyramid Network for Multi-Person Pose Estimation}},
+        Author = {Chen, Yilun and Wang, Zhicheng and Peng, Yuxiang and Zhang, Zhiqiang and Yu, Gang and Sun, Jian},
+        Title = {{Cascaded Pyramid Network for Multi-Person Pose Estimation}},
         Conference = {CVPR},
-    	Year = {2018}
+        Year = {2018}
     }
 
 ## Contact
