@@ -169,9 +169,11 @@ def Preprocessing(d, stage='train'):
 
     vis = False
     img = cv2.imread(os.path.join(cfg.img_path, d['imgpath']))
-    # while img is None:
-    #     time.sleep(np.random.rand() * 5)
-    #     img = cv2.imread(os.path.join(cfg.img_path, d['imgpath']))
+    #hack(multiprocessing data provider)
+    while img is None:
+        print('read none image')
+        time.sleep(np.random.rand() * 5)
+        img = cv2.imread(os.path.join(cfg.img_path, d['imgpath']))
     add = max(img.shape[0], img.shape[1])
     bimg = cv2.copyMakeBorder(img, add, add, add, add, borderType=cv2.BORDER_CONSTANT,
                               value=cfg.pixel_means.reshape(-1))
