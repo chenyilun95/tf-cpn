@@ -249,7 +249,7 @@ def Preprocessing(d, stage='train'):
 
     img = img - cfg.pixel_means
     if cfg.pixel_norm:
-        img = img / 255. * 2.
+        img = img / 255.
     img = img.transpose(2, 0, 1)
     imgs.append(img)
     if 'joints' in d:
