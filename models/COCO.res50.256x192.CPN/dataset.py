@@ -169,7 +169,9 @@ def Preprocessing(d, stage='train'):
 
     vis = False
     img = cv2.imread(os.path.join(cfg.img_path, d['imgpath']))
+    #hack(multiprocessing data provider)
     while img is None:
+        print('read none image')
         time.sleep(np.random.rand() * 5)
         img = cv2.imread(os.path.join(cfg.img_path, d['imgpath']))
     add = max(img.shape[0], img.shape[1])
@@ -247,7 +249,7 @@ def Preprocessing(d, stage='train'):
 
     img = img - cfg.pixel_means
     if cfg.pixel_norm:
-        img = img / 255. * 2.
+        img = img / 255.
     img = img.transpose(2, 0, 1)
     imgs.append(img)
     if 'joints' in d:
