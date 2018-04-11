@@ -39,7 +39,10 @@ We'll call the directory that you cloned $CPN_ROOT.
 
 3. Download the base model (ResNet) weights from [slim model_zoo](https://github.com/tensorflow/models/tree/master/research/slim) and put them in $CPN_ROOT/data/imagenet_weights/. 
 
-4. Link the output folder to $CPN_ROOT/logs/.
+4. Setup your environment by first running
+```
+pip3 install -r requirement.txt
+```
 
 5. To train a CPN model, use network.py in the model folder.
 ```
