@@ -27,10 +27,13 @@ Here we use the strong detector that achieves an AP of 44.5 whose human AP is 57
 </center>
 
 For reference, by using the detection results given by [MegDet](https://arxiv.org/abs/1711.07240) that achieves an AP of 52.1 whose human AP is 62.9, human pose result is as followed.
+
 <center>
+
 | Method | AP @0.5:0.95 | AP @0.5 | AP @0.75 | AP medium | AP large |
 |:-------|:-------:|:-------:|:-------:|:-------:|:-------:|
 | MegDet+CPN(ResNet-101, 384x288) | 73.0 | 91.8 | 80.8 | 69.1 | 78.7 |
+
 </center>
 
 ## Usage
