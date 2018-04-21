@@ -45,7 +45,7 @@ git clone https://github.com/chenyilun95/tf-cpn.git
 ```
 We'll call the directory that you cloned $CPN_ROOT.
 
-2. Download MSCOCO images from [http://cocodataset.org/#download](http://cocodataset.org/#download). We train in COCO [trainvalminusminival](https://drive.google.com/drive/folders/15loPFQCMQnJqLK1viSMeIwTFT-KbNzdG?usp=sharing) dataset and validate in [minival](https://drive.google.com/drive/folders/15loPFQCMQnJqLK1viSMeIwTFT-KbNzdG?usp=sharing) dataset. Then put the data in $CPN_ROOT/data/COCO/MSCOCO. All paths are defined in config.py and you can modify them as you wish.
+2. Download MSCOCO images from [http://cocodataset.org/#download](http://cocodataset.org/#download). We train in COCO [trainvalminusminival](https://drive.google.com/drive/folders/15loPFQCMQnJqLK1viSMeIwTFT-KbNzdG?usp=sharing) dataset and validate in [minival](https://drive.google.com/drive/folders/15loPFQCMQnJqLK1viSMeIwTFT-KbNzdG?usp=sharing) dataset. Then put the data and evaluation [PythonAPI](https://github.com/cocodataset/cocoapi/tree/master/PythonAPI) in $CPN_ROOT/data/COCO/MSCOCO. All paths are defined in config.py and you can modify them as you wish.
 
 3. Download the base model (ResNet) weights from [slim model_zoo](https://github.com/tensorflow/models/tree/master/research/slim) and put them in $CPN_ROOT/data/imagenet_weights/. 
 
