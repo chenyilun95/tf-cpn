@@ -101,6 +101,7 @@ class Network(ModelDesc):
             label7 = tf.placeholder(tf.float32, shape=[cfg.batch_size, *cfg.output_shape, cfg.nr_skeleton])
             valids = tf.placeholder(tf.float32, shape=[cfg.batch_size, cfg.nr_skeleton])
             labels = [label15, label11, label9, label7]
+            # labels.reverse() # The original labels are reversed. For reproduction of our pre-trained model, I'll keep it same.
             self.set_inputs(image, label15, label11, label9, label7, valids)
         else:
             image = tf.placeholder(tf.float32, shape=[None, *cfg.data_shape, 3])

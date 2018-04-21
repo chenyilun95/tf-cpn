@@ -8,7 +8,7 @@ import cv2
 
 import sys
 cur_dir = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(cur_dir, 'coco', 'PythonAPI'))
+sys.path.insert(0, os.path.join(cur_dir, 'MSCOCO', 'PythonAPI'))
 from pycocotools.coco import COCO
 
 class COCOJoints(object):
