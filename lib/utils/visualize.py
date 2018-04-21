@@ -130,11 +130,10 @@ def draw_skeleton(aa, kp, show_skeleton_labels=False):
     for j in range(len(kp)):
         if kp[j][0] >= 0 and kp[j][1] >= 0:
 
-            if len(kp[j]) > 2:
-                if len(kp[j]) <= 2 or (len(kp[j]) > 2 and kp[j][2] > 1.1):
-                    cv2.circle(aa, tuple(kp[j][:2]), 2, tuple((0,0,255)), 2)
-                elif len(kp[j]) <= 2 or (len(kp[j]) > 2 and kp[j][2] > 0.1):
-                    cv2.circle(aa, tuple(kp[j][:2]), 2, tuple((255,0,0)), 2)
+            if len(kp[j]) <= 2 or (len(kp[j]) > 2 and kp[j][2] > 1.1):
+                cv2.circle(aa, tuple(kp[j][:2]), 2, tuple((0,0,255)), 2)
+            elif len(kp[j]) <= 2 or (len(kp[j]) > 2 and kp[j][2] > 0.1):
+                cv2.circle(aa, tuple(kp[j][:2]), 2, tuple((255,0,0)), 2)
 
             if show_skeleton_labels and (len(kp[j]) <= 2 or (len(kp[j]) > 2 and kp[j][2] > 0.1)):
                 cv2.putText(aa, kp_names[j], tuple(kp[j][:2]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0))
