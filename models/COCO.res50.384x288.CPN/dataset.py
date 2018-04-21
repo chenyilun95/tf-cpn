@@ -236,16 +236,11 @@ def Preprocessing(d, stage='train'):
         segms.append(seg)
 
     if vis:
-        img2 = img.copy()
-        from visualization import draw_skeleton
-        draw_skeleton(img, label.astype(int))
-        cv2.imshow('1', ori_img)
-        cv2.imshow('2', img2)
-        cv2.imshow('', img)
-        cv2.waitKey()
-        # from vis_detection import visualize
-        # visualize(ori_img, np.array(d['bbox']).reshape(4,))
-        # visualize(img, keypoints=joints)
+        tmpimg = img.copy()
+        from lib.utils.visualize import draw_skeleton
+        draw_skeleton(tmpimg, label.astype(int))
+        cv2.imwrite('vis.jpg', tmpimg)
+        from IPython import embed; embed()
 
     img = img - cfg.pixel_means
     if cfg.pixel_norm:
