@@ -29,6 +29,11 @@ def make_dir(path):
         return
     os.makedirs(path)
 
+def del_file(path, msg='{} deleted.'):
+    if os.path.exists(path):
+        os.remove(path)
+        print(msg.format(path))
+
 def approx_equal(a, b, eps=1e-9):
     return np.fabs(a-b) < eps
 
@@ -44,3 +49,4 @@ def get_rng(obj=None):
     seed = (id(obj) + os.getpid() +
             int(datetime.now().strftime("%Y%m%d%H%M%S%f"))) % 4294967295
     return np.random.RandomState(seed)
+

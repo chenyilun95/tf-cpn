@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-### copy from https://github.com/ppwwyyxx/tensorpack
+### modified from https://github.com/ppwwyyxx/tensorpack
 
+import os
 import sys
 import msgpack
 import msgpack_numpy
@@ -19,8 +20,9 @@ if old_mod is not None:
 else:
     del sys.modules['torch']
 
+import pickle
 
-__all__ = ['loads', 'dumps']
+__all__ = ['loads', 'dumps', 'dump_pkl', 'load_pkl']
 
 
 def dumps_msgpack(obj):
@@ -58,9 +60,19 @@ def loads_pyarrow(buf):
     return pa.deserialize(buf)
 
 
+def dump_pkl(name, obj):
+    with open('{}.pkl'.format(name), 'wb') as f:
+        pickle.dump( obj, f, pickle.HIGHEST_PROTOCOL )
+
+def load_pkl(name):
+    with open('{}.pkl'.format(name), 'rb') as f:
+        ret = pickle.load( f )
+    return ret
+
 if pa is None:
     loads = loads_msgpack
     dumps = dumps_msgpack
 else:
     loads = loads_pyarrow
     dumps = dumps_pyarrow
+
