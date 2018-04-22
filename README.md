@@ -103,5 +103,8 @@ If you find [CPN](https://arxiv.org/abs/1711.07319) useful in your research, ple
         Year = {2018}
     }
 
+## Troubleshooting
+1. If you find it pending while running mptest.py, it may be the blocking problem of python queue in multiprocessing. For convenience, I simply implemented data transferring via temporary files. You need to call MultiProc with extra parameter "dump_method=1" and it'll be fine to run the test code with multiprocess.
+
 ## Contact
 If you have any questions about this repo, please feel free to contact chenyilun95@gmail.com.
