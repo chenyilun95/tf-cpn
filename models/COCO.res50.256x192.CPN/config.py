@@ -22,10 +22,10 @@ class Config:
     lr_gamma = 0.5
     lr_dec_epoch = 60
 
-    epoch_size = 60000  # include flip * 2, aug * 4, batch * 16
+    epoch_size = 60000 
     optimizer = 'adam'
 
-    batch_size = 32  # batch size in per gpu i.e. the first dim of inputs
+    batch_size = 32 
     weight_decay = 1e-5
 
     step_size = epoch_size * lr_dec_epoch
