@@ -237,7 +237,7 @@ def Preprocessing(d, stage='train'):
 
     if vis:
         tmpimg = img.copy()
-        from lib.utils.visualize import draw_skeleton
+        from utils.visualize import draw_skeleton
         draw_skeleton(tmpimg, label.astype(int))
         cv2.imwrite('vis.jpg', tmpimg)
         from IPython import embed; embed()
