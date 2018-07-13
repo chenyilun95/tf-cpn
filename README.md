@@ -103,6 +103,9 @@ If you find [CPN](https://arxiv.org/abs/1711.07319) useful in your research, ple
         Year = {2018}
     }
 
+## Third party implementation
+Thanks for [Geng David](https://github.com/GengDavid) and his [pytorch re-implementation of CPN](https://github.com/GengDavid/pytorch-cpn).
+
 ## Troubleshooting
 1. If you find it pending while running mptest.py, it may be the blocking problem of python queue in multiprocessing. For convenience, I simply implemented data transferring via temporary files. You need to call MultiProc with extra parameter "dump_method=1" and it'll be fine to run the test code with multiprocess.
 
