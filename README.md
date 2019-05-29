@@ -1,5 +1,5 @@
 # Cascaded Pyramid Network (CPN)
-
+This repo is also linked to [megvii-cpn](https://github.com/megvii-detection/tf-cpn)
 This is a Tensorflow re-implementation of CPN ([Cascaded Pyramid Network](https://arxiv.org/abs/1711.07319)), which wins 2017 COCO Keypoints Challenge. The original repo is based on the inner deep learning framework (MegBrain) in Megvii Inc.
 
 ## Results on COCO minival dataset (Single Model)
