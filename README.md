@@ -103,7 +103,26 @@ If you find [CPN](https://arxiv.org/abs/1711.07319) useful in your research, ple
         Conference = {CVPR},
         Year = {2018}
     }
+You may also be interested in the following papers:
 
+[MSPN](https://arxiv.org/abs/1901.00148):
+
+       @article{li2019rethinking,
+         title={Rethinking on Multi-Stage Networks for Human Pose Estimation},
+         author={Li, Wenbo and Wang, Zhicheng and Yin, Binyi and Peng, Qixiang and Du, Yuming and Xiao, Tianzi and Yu, Gang and Lu, Hongtao and Wei, Yichen and Sun, Jian},
+         journal={arXiv preprint arXiv:1901.00148},
+         year={2019}
+       }
+[RSN](https://arxiv.org/abs/2003.04030):
+
+       @misc{cai2020learning,
+           title={Learning Delicate Local Representations for Multi-Person Pose Estimation},
+           author={Yuanhao Cai and Zhicheng Wang and Zhengxiong Luo and Binyi Yin and Angang Du and Haoqian Wang and Xinyu Zhou and Erjin Zhou and Xiangyu Zhang and Jian Sun},
+           year={2020},
+           eprint={2003.04030},
+           archivePrefix={arXiv},
+           primaryClass={cs.CV}
+       }
 ## Third party implementation
 Thanks for [Geng David](https://github.com/GengDavid) and his [pytorch re-implementation of CPN](https://github.com/GengDavid/pytorch-cpn).
 
